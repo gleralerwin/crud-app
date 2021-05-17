@@ -1,0 +1,5 @@
+{
+ "browserRefresh.browser": "Google Chrome",
+  "browserRefresh.delay": 0, 
+  "browserRefresh.focus": false
+}

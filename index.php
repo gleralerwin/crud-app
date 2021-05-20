@@ -21,7 +21,7 @@
     <div class="col-sm-12">
 
     <!-- Edit modal with a button -->
-    <button type="button" class="btn btn-primary btn-md" data-toggle="modal" onclick="addUserModal()"><span class="glyphicon glyphicon-plus"></span> Add User</button>
+    <button type="button" class="btn btn-primary btn-md" onclick="addUserModal()"><span class="glyphicon glyphicon-plus"></span> Add User</button>
 
       <h3 style="padding-top: 20px;">Userlist</h3>
       <table class="table table-bordered">
@@ -107,16 +107,41 @@
 <div id="editModal" class="modal fade" role="dialog" data-id="">
   <div class="modal-dialog">
 
-    <!-- Modal content-->
+    <!-- Edit Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
+        <h4 class="modal-title">Edit Details</h4>
       </div>
       <div class="modal-body">
-        <p>Some text in the modal.</p>
+
+      <div class="form-group">
+        <label>First Name : </label> 
+        <input type="text" id="edit_fname" class="form-control"> 
+        </div>
+
+        <div class="form-group">
+        <label>Last Name : </label> 
+        <input type="text" id="edit_lname" class="form-control"> 
+        </div>
+
+        <div class="form-group">
+        <label>Address : </label> 
+        <input type="text" id="edit_address" class="form-control"> 
+        </div>
+
+        <div class="form-group">
+        <label>Gender</label>
+        <select id="edit_gender" class="form-control">
+        <option></option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        </select>
+        </div>
+
       </div>
       <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="">Save</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>

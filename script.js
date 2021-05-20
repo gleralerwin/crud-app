@@ -58,6 +58,8 @@ function saveUser()
 //edit modal
 function editModal(id)
 {
+    var id = $(this).attr('data-id');
+
     $.ajax({
         url: 'ajax.php',
         type: 'post',

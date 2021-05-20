@@ -37,10 +37,10 @@ function fetchUser()
             echo "
             <tr>
             <td>".$i++."</td>
-            <td>".$row["fname"]."</td>
-            <td>".$row["lname"]."</td>
-            <td>".$row["address"]."</td>
-            <td>".$row["gender"]."</td>
+            <td>".$row['fname']."</td>
+            <td>".$row['lname']."</td>
+            <td>".$row['address']."</td>
+            <td>".$row['gender']."</td>
             <td>
             <button class='btn btn-sm btn-info' onclick='editModal('".$row['id']."')'><span class='glyphicon glyphicon-wrench'></span> EDIT</button> | 
             <button class='btn btn-sm btn-danger'><span class='glyphicon glyphicon-trash'></span> DELETE</button>

@@ -43,7 +43,7 @@ function saveUser()
             },
             success: function(data)
             {
-                // console.log(data);
+                console.log(data);
                 alert("Added Successfully");
                 fetch();
                 
@@ -55,11 +55,14 @@ function saveUser()
     }
 }
 
-//edit modal
 function editModal(id)
 {
-    var id = $(this).attr('data-id');
+    $('#editModal').modal();
+}
 
+//edit modal
+function editUser()
+{
     $.ajax({
         url: 'ajax.php',
         type: 'post',
@@ -70,7 +73,6 @@ function editModal(id)
         },
         success: function(data){
             // console.log(data);
-            $('#editModal').modal();
         }
     });
 }

@@ -75,6 +75,7 @@ function editModal(id)
     });
 }
 
+//display number of user
 function showTotalUser()
 {
     $.ajax({
@@ -89,5 +90,21 @@ function showTotalUser()
             $('#displayUser').html('<button type="button" class="btn btn-primary">Users <span class="badge">'+data+'</span></button>');
         }
 
+    });
+}
+
+//delete
+function deleteUser(id)
+{
+    $.ajax({
+        url: 'ajax.php',
+        type: 'post',
+        dataType: 'text',
+        data:{
+            id:id,    
+            function: 'getById'},
+        success: function(data){
+            console.log(data);
+        }
     });
 }

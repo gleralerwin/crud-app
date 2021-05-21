@@ -20,6 +20,10 @@ elseif($function == 'getById')
     $id = isset($_POST['id']);
     getById($id);
 }
+elseif($function == 'countRow')
+{
+    countRow();
+}
 
 ////////////////////////////////////////////////////////////////
 
@@ -32,6 +36,7 @@ function fetchUser()
     $checkResult = mysqli_num_rows($result);
 
     if($checkResult > 0){
+        $message = "";
         $i=1;
         while($row = mysqli_fetch_assoc($result)){
             echo "
@@ -49,7 +54,14 @@ function fetchUser()
             
             ";
         }
-    }    
+    } 
+    else {
+        $message = "<center>Database is Empty!</center>";
+        echo $message;
+            
+    }  
+    
+    
 }
 
 function saveUser($fname, $lname, $address, $gender)
@@ -63,24 +75,30 @@ function saveUser($fname, $lname, $address, $gender)
 function getById($id)
 {
     include 'DB.php';
-    $sql = "SELECT * FROM users WHERE id=".$id." ";
+    $sql = "SELECT * FROM users WHERE id='$id' ";
     $result = mysqli_query($conn, $sql);
     
     while($row = mysqli_fetch_row($result))
     {
-        $data[] = array(
+        $arr[] = array(
             'id'=>$row[0],
             'fname'=>$row[1],
             'lname'=>$row[2],
-            'address' => $row[3],
-            'gender' => $row[4]
+            'address'=>$row[3],
+            'gender'=>$row[4]
         );
     }
-    echo json_encode($data);
+    echo json_encode($arr);
     exit();
-
-
 }
 
+function countRow()
+{
+    include 'DB.php';
+    $sql = "SELECT * FROM users";
+    $result = mysqli_query($conn, $sql);
+    $checkRow = mysqli_num_rows($result);
+    echo $checkRow;
+}
 
 ?>

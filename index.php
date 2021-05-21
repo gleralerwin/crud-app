@@ -17,12 +17,12 @@
 </div>
 
 <div class="container">
+<div id="displayUser" style="margin: 10px;"></div>
   <div class="row">
     <div class="col-sm-12">
 
     <!-- Edit modal with a button -->
     <button type="button" class="btn btn-primary btn-md" onclick="addUserModal()"><span class="glyphicon glyphicon-plus"></span> Add User</button>
-
       <h3 style="padding-top: 20px;">Userlist</h3>
       <table class="table table-bordered">
         <thead>
@@ -108,7 +108,7 @@
   <div class="modal-dialog">
 
     <!-- Edit Modal content-->
-    <div class="modal-content">git remote rm <remote-name>
+    <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Edit Details</h4>
@@ -117,7 +117,6 @@
 
       <div class="form-group">
         <label>First Name : </label> 
-        <div id="display"></div>
         <input type="text" id="edit-fname" class="form-control"> 
         </div>
 
@@ -154,6 +153,7 @@
 
 $(function(){
   fetch();
+  showTotalUser();
 });
 
 </script>

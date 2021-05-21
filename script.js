@@ -58,7 +58,7 @@ function saveUser()
 function editModal(id)
 {
     $('#editModal').modal();
-    $('#editModal').attr('data-id', id);
+    $('#editModal').attr('assetid', id);
 
     $.ajax({
         url: 'ajax.php',
@@ -71,27 +71,23 @@ function editModal(id)
         success: function(data)
         {
             console.log(data);
-            $('#edit-fname').val(data[0]['fname']);
-            $('#edit-lname').val(data[0]['lname']);
-            $('#display').append(data);
-
         }
     });
 }
 
-//edit modal
-function saveUser()
+function showTotalUser()
 {
     $.ajax({
         url: 'ajax.php',
         type: 'post',
         dataType: 'text',
-        data: {
-            id:id,
-            function: 'getById'
-        },
-        success: function(data){
+        data: {function: 'countRow'},
+        success: function(data)
+        {
             // console.log(data);
+            $('#displayUser').empty();
+            $('#displayUser').html('<button type="button" class="btn btn-primary">Users <span class="badge">'+data+'</span></button>');
         }
+
     });
 }

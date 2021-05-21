@@ -108,7 +108,7 @@
   <div class="modal-dialog">
 
     <!-- Edit Modal content-->
-    <div class="modal-content">
+    <div class="modal-content">git remote rm <remote-name>
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Edit Details</h4>

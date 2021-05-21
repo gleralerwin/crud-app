@@ -104,7 +104,7 @@
 
 
 <!-- Edit Modal -->
-<div id="editModal" class="modal fade" role="dialog">
+<div id="editModal" class="modal fade"  data-id="" role="dialog">
   <div class="modal-dialog">
 
     <!-- Edit Modal content-->
@@ -117,22 +117,23 @@
 
       <div class="form-group">
         <label>First Name : </label> 
-        <input type="text" id="edit_fname" class="form-control"> 
+        <div id="display"></div>
+        <input type="text" id="edit-fname" class="form-control"> 
         </div>
 
         <div class="form-group">
         <label>Last Name : </label> 
-        <input type="text" id="edit_lname" class="form-control"> 
+        <input type="text" id="edit-lname" class="form-control"> 
         </div>
 
         <div class="form-group">
         <label>Address : </label> 
-        <input type="text" id="edit_address" class="form-control"> 
+        <input type="text" id="edit-address" class="form-control"> 
         </div>
 
         <div class="form-group">
         <label>Gender</label>
-        <select id="edit_gender" class="form-control">
+        <select id="edit-gender" class="form-control">
         <option></option>
         <option value="male">Male</option>
         <option value="female">Female</option>

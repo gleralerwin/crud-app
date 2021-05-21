@@ -6,7 +6,7 @@ if($function == 'fetchUser')
 {
     fetchUser();
 }
-else if($function == 'saveUser')
+elseif($function == 'saveUser')
 {
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
@@ -15,9 +15,9 @@ else if($function == 'saveUser')
 
     saveUser($fname, $lname, $address, $gender);
 }
-else if($function == 'getById')
+elseif($function == 'getById')
 {
-    $id = $_POST['id'];
+    $id = isset($_POST['id']);
     getById($id);
 }
 
@@ -42,7 +42,7 @@ function fetchUser()
             <td>".$row['address']."</td>
             <td>".$row['gender']."</td>
             <td>
-            <button class='btn btn-sm btn-info' onclick='editModal('".$row['id']."')'><span class='glyphicon glyphicon-wrench'></span> EDIT</button> | 
+            <button class='btn btn-sm btn-info' onclick='editModal(".$row['id'].")'><span class='glyphicon glyphicon-wrench'></span> EDIT</button> | 
             <button class='btn btn-sm btn-danger'><span class='glyphicon glyphicon-trash'></span> DELETE</button>
             </td>
             </tr>
@@ -63,8 +63,23 @@ function saveUser($fname, $lname, $address, $gender)
 function getById($id)
 {
     include 'DB.php';
-    $sql = "SELECT * FROM users WHERE id='$id' ";
-    mysqli_query($conn, $sql);
+    $sql = "SELECT * FROM users WHERE id=".$id." ";
+    $result = mysqli_query($conn, $sql);
+    
+    while($row = mysqli_fetch_row($result))
+    {
+        $data[] = array(
+            'id'=>$row[0],
+            'fname'=>$row[1],
+            'lname'=>$row[2],
+            'address' => $row[3],
+            'gender' => $row[4]
+        );
+    }
+    echo json_encode($data);
+    exit();
+
+
 }
 
 

@@ -58,10 +58,29 @@ function saveUser()
 function editModal(id)
 {
     $('#editModal').modal();
+    $('#editModal').attr('data-id', id);
+
+    $.ajax({
+        url: 'ajax.php',
+        type: 'post',
+        dataType: 'json',
+        data: {
+            id:id,
+            function: 'getById'
+        },
+        success: function(data)
+        {
+            console.log(data);
+            $('#edit-fname').val(data[0]['fname']);
+            $('#edit-lname').val(data[0]['lname']);
+            $('#display').append(data);
+
+        }
+    });
 }
 
 //edit modal
-function editUser()
+function saveUser()
 {
     $.ajax({
         url: 'ajax.php',

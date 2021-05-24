@@ -14,11 +14,11 @@ function fetch()
     });
 } 
 
-//add user modal
+//adduser modal
 function addUserModal()
 {
     $('#addModal').modal();
-}
+}   
  
 //add user
 function saveUser()
@@ -43,10 +43,9 @@ function saveUser()
             },
             success: function(data)
             {
-                console.log(data);
+                // console.log(data);
                 alert("Added Successfully");
                 fetch();
-                
             }
         });
     } 
@@ -55,6 +54,7 @@ function saveUser()
     }
 }
 
+//editmodal
 function editModal(id)
 {
     $('#editModal').modal();
@@ -69,11 +69,13 @@ function editModal(id)
         },
         success: function(data)
         {
-            console.log(data);
+            // console.log(data);
            
             $('#editModal').attr('data-user-id', data[0]['id']);
             $('#edit-fname').val(data[0]['fname']); 
             $('#edit-lname').val(data[0]['lname']);
+            $('#edit-address').val(data[0]['address']);
+            $('#edit-gender').val(data[0]['gender']);
         }
     });
 }
@@ -105,9 +107,36 @@ function deleteUser(id)
         dataType: 'text',
         data:{
             id:id,    
-            function: 'getById'},
+            function: 'deleteId'},
         success: function(data){
-            console.log(data);
+            // console.log(data);
+            alert('are you sure');
+            fetch();
         }
     });
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+
+function getApiData()
+{
+    $.ajax({
+        url: 'https://jsonplaceholder.typicode.com/users',
+        success: function(data){
+            console.log(data);
+
+            var student = '';
+
+            $.each(data, function(key, value){
+                student += '<tr>';
+                student += '<td>' + value.name + '</td>';
+                student += '<td>' + value.username + '</td>';
+                student += '<td>' + value.email + '</td>';
+                student += '<td>' + value.address.city + '</td>';
+                student += '</tr>';
+            });
+            $('#data-api').append(student);
+        }
+    });
+
 }

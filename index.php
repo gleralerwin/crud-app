@@ -40,7 +40,20 @@
 
     </div>
     <div class="col-sm-6">
-      <h3>Pending User</h3>
+      <h3>Data From API</h3>
+      <table class="table table-bordered">
+      <thead>
+          <tr>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Address</th>
+          </tr>
+        </thead>
+        <tbody id="data-api"></tbody>
+      </table>
+
+      <div id="display" onload="getUserList()"></div>
      
     </div>
   </div>
@@ -155,6 +168,7 @@
 $(function(){
   fetch();
   showTotalUser();
+  getApiData();
 });
 
 </script>

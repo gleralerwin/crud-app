@@ -24,7 +24,11 @@ elseif($function == 'countRow')
 {
     countRow();
 }
-
+elseif($function == 'deleteId')
+{   
+    $id = $_POST['id'];
+    deleteId($id);
+}
 ////////////////////////////////////////////////////////////////
 
 function fetchUser()
@@ -60,8 +64,6 @@ function fetchUser()
         echo $message;
             
     }  
-    
-    
 }
 
 function saveUser($fname, $lname, $address, $gender)
@@ -99,6 +101,19 @@ function countRow()
     $result = mysqli_query($conn, $sql);
     $checkRow = mysqli_num_rows($result);
     echo $checkRow;
+}
+
+function deleteId($id)
+{
+    include 'DB.php';
+    $sql = "DELETE FROM users WHERE id='$id'";
+    $result = mysqli_query($conn, $sql);
+
+    if($result){ 
+        return true;
+    }else {
+        return false;
+    }
 }
 
 ?>

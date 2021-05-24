@@ -75,7 +75,7 @@ function saveUser($fname, $lname, $address, $gender)
 function getById($id)
 {
     include 'DB.php';
-    $sql = "SELECT * FROM users WHERE id='$id' ";
+    $sql = "SELECT * FROM users WHERE id='".$id."' ";
     $result = mysqli_query($conn, $sql);
     
     while($row = mysqli_fetch_row($result))

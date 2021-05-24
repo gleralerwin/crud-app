@@ -58,7 +58,6 @@ function saveUser()
 function editModal(id)
 {
     $('#editModal').modal();
-    $('#editModal').attr('assetid', id);
 
     $.ajax({
         url: 'ajax.php',
@@ -71,6 +70,10 @@ function editModal(id)
         success: function(data)
         {
             console.log(data);
+           
+            $('#editModal').attr('data-user-id', data[0]['id']);
+            $('#edit-fname').val(data[0]['fname']);
+            $('#edit-lname').val(data[0]['lname']);
         }
     });
 }

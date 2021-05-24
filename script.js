@@ -72,7 +72,7 @@ function editModal(id)
             console.log(data);
            
             $('#editModal').attr('data-user-id', data[0]['id']);
-            $('#edit-fname').val(data[0]['fname']);
+            $('#edit-fname').val(data[0]['fname']); 
             $('#edit-lname').val(data[0]['lname']);
         }
     });

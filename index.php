@@ -9,6 +9,9 @@
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
+ <!-- dataTables -->
+  <link rel="stylesheet" href="">
+
 </head>
 <body>
 	
@@ -53,12 +56,11 @@
         <tbody id="data-api"></tbody>
       </table>
 
-      <div id="display" onload="getUserList()"></div>
+      <div id="display"></div>
      
     </div>
   </div>
 </div>
-
 
 <script src="./script.js"></script>
 <!-- jQuery library -->
@@ -66,6 +68,11 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<!-- DataTable -->
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"></script>
 </body>
 </html>
 
@@ -169,6 +176,7 @@ $(function(){
   fetch();
   showTotalUser();
   getApiData();
+  loadData();
 });
 
 </script>

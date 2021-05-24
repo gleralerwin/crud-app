@@ -140,3 +140,20 @@ function getApiData()
     });
 
 }
+
+function loadData()
+{
+    $.ajax({
+        url: './server_processing.php',
+        type: 'post',
+        dataType: 'json',
+        processing: true,
+        serverSide: true,
+        success: function(data){
+            console.log(data);
+            $('#display').DataTable(data);
+        }
+    });
+
+   
+}

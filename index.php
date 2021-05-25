@@ -9,9 +9,6 @@
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
- <!-- dataTables -->
-  <link rel="stylesheet" href="">
-
 </head>
 <body>
 	
@@ -24,7 +21,7 @@
   <div class="row">
     <div class="col-sm-12">
 
-    <!-- Edit modal with a button -->
+    <!-- add modal button -->
     <button type="button" class="btn btn-primary btn-md" onclick="addUserModal()"><span class="glyphicon glyphicon-plus"></span> Add User</button>
       <h3 style="padding-top: 20px;">Userlist</h3>
       <table class="table table-bordered">
@@ -70,9 +67,9 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <!-- DataTable -->
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"></script>
+<script src="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"></script> -->
 </body>
 </html>
 
@@ -174,9 +171,9 @@
 
 $(function(){
   fetch();
-  showTotalUser();
-  getApiData();
-  loadData();
+  // showTotalUser();
+  // getApiData();
+  // loadData();
 });
 
 </script>

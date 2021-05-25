@@ -65,12 +65,12 @@ function editModal(id)
         dataType: 'json',
         data: {
             id:id,
-            function: 'getById'
+            function:'getById'
         },
         success: function(data)
         {
-            // console.log(data);
-           
+            console.log(data);
+            
             $('#editModal').attr('data-user-id', data[0]['id']);
             $('#edit-fname').val(data[0]['fname']); 
             $('#edit-lname').val(data[0]['lname']);
@@ -141,19 +141,17 @@ function getApiData()
 
 }
 
-function loadData()
-{
-    $.ajax({
-        url: './server_processing.php',
-        type: 'post',
-        dataType: 'json',
-        processing: true,
-        serverSide: true,
-        success: function(data){
-            console.log(data);
-            $('#display').DataTable(data);
-        }
-    });
-
-   
-}
+// function loadData()
+// {
+//     $.ajax({
+//         url: 'server_processing.php',
+//         type: 'post',
+//         dataType: 'json',
+//         processing: true,
+//         serverSide: true,
+//         success: function(data){
+//             console.log(data);
+//             $('#display').dataTable();
+//         }
+//     });
+// }

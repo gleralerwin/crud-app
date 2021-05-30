@@ -120,7 +120,6 @@
 </div>
 
 
-
 <!-- Edit Modal -->
 <div id="editModal" class="modal fade"  data-user-id="" role="dialog">
   <div class="modal-dialog">

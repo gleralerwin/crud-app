@@ -57,8 +57,6 @@ function saveUser()
 //editmodal
 function editModal(id)
 {
-    $('#editModal').modal();
-
     $.ajax({
         url: 'ajax.php',
         type: 'post',
@@ -70,7 +68,8 @@ function editModal(id)
         success: function(data)
         {
             console.log(data);
-            
+            $('#editModal').modal();
+
             $('#editModal').attr('data-user-id', data[0]['id']);
             $('#edit-fname').val(data[0]['fname']); 
             $('#edit-lname').val(data[0]['lname']);
@@ -118,28 +117,28 @@ function deleteUser(id)
 
 ///////////////////////////////////////////////////////////////////////////////////
 
-function getApiData()
-{
-    $.ajax({
-        url: 'https://jsonplaceholder.typicode.com/users',
-        success: function(data){
-            console.log(data);
+// function getApiData()
+// {
+//     $.ajax({
+//         url: 'https://jsonplaceholder.typicode.com/users',
+//         success: function(data){
+//             console.log(data);
 
-            var student = '';
+//             var student = '';
 
-            $.each(data, function(key, value){
-                student += '<tr>';
-                student += '<td>' + value.name + '</td>';
-                student += '<td>' + value.username + '</td>';
-                student += '<td>' + value.email + '</td>';
-                student += '<td>' + value.address.city + '</td>';
-                student += '</tr>';
-            });
-            $('#data-api').append(student);
-        }
-    });
+//             $.each(data, function(key, value){
+//                 student += '<tr>';
+//                 student += '<td>' + value.name + '</td>';
+//                 student += '<td>' + value.username + '</td>';
+//                 student += '<td>' + value.email + '</td>';
+//                 student += '<td>' + value.address.city + '</td>';
+//                 student += '</tr>';
+//             });
+//             $('#data-api').append(student);
+//         }
+//     });
 
-}
+// }
 
 // function loadData()
 // {

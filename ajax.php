@@ -43,20 +43,20 @@ function fetchUser()
         $message = "";
         $i=1;
         while($row = mysqli_fetch_assoc($result)){
-            echo "
+            echo '
             <tr>
-            <td>".$i++."</td>
-            <td>".$row['fname']."</td>
-            <td>".$row['lname']."</td>
-            <td>".$row['address']."</td>
-            <td>".$row['gender']."</td>
+            <td>'.$i++.'</td>
+            <td>'.$row['fname'].'</td>
+            <td>'.$row['lname'].'</td>
+            <td>'.$row['address'].'</td>
+            <td>'.$row['gender'].'</td>
             <td>
-            <button class='btn btn-sm btn-info' onclick='editModal(".$row['id'].")'><span class='glyphicon glyphicon-wrench'></span></button> | 
-            <button class='btn btn-sm btn-danger' onclick='deleteUser(".$row['id'].")'><span class='glyphicon glyphicon-trash'></span></button>
+            <button class="btn btn-sm btn-info" onclick="editModal('.$row['id'].')"><span class="glyphicon glyphicon-wrench"></span></button> | 
+            <button class="btn btn-sm btn-danger" onclick="deleteUser('.$row['id'].')"><span class="glyphicon glyphicon-trash"></span></button>
             </td>
             </tr>
             
-            ";
+            ';
         }
     } 
     else {
@@ -77,7 +77,7 @@ function saveUser($fname, $lname, $address, $gender)
 function getById($id)
 {
     include 'DB.php';
-    $sql = "SELECT * FROM users WHERE id='$id' ";
+    $sql = "SELECT * FROM users WHERE id='".$id."' ";
     $result = mysqli_query($conn, $sql);
     
     while($row = mysqli_fetch_row($result))

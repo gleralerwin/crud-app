@@ -80,7 +80,7 @@ function getById($id)
     $sql = "SELECT * FROM users WHERE id='".$id."' ";
     $result = mysqli_query($conn, $sql);
     
-    while($row = mysqli_fetch_row($result))
+    while($row = mysqli_fetch_assoc($result))
     {
         $arr[] = array(
             'id'=>$row[0],

@@ -121,7 +121,7 @@
 
 
 <!-- Edit Modal -->
-<div id="editModal" class="modal fade"  data-user-id="" role="dialog">
+<div id="editModal" class="modal fade"  data-user-id="">
   <div class="modal-dialog">
 
     <!-- Edit Modal content-->

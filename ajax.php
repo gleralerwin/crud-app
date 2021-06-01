@@ -29,6 +29,7 @@ elseif($function == 'deleteId')
     $id = $_POST['id'];
     deleteId($id);
 }
+
 ////////////////////////////////////////////////////////////////
 
 function fetchUser()
@@ -42,7 +43,7 @@ function fetchUser()
     if($checkResult > 0){
         $message = "";
         $i=1;
-        while($row = mysqli_fetch_assoc($result)){
+        while($row = mysqli_fetch_array($result)){
             echo '
             <tr>
             <td>'.$i++.'</td>
@@ -55,7 +56,6 @@ function fetchUser()
             <button class="btn btn-sm btn-danger" onclick="deleteUser('.$row['id'].')"><span class="glyphicon glyphicon-trash"></span></button>
             </td>
             </tr>
-            
             ';
         }
     } 
@@ -80,7 +80,7 @@ function getById($id)
     $sql = "SELECT * FROM users WHERE id='".$id."' ";
     $result = mysqli_query($conn, $sql);
     
-    while($row = mysqli_fetch_assoc($result))
+    while($row = mysqli_fetch_array($result))
     {
         $arr[] = array(
             'id'=>$row[0],

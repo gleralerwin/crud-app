@@ -121,7 +121,7 @@
 
 
 <!-- Edit Modal -->
-<div id="editModal" class="modal fade"  data-user-id="">
+<div id="editmodal" class="modal fade">
   <div class="modal-dialog">
 
     <!-- Edit Modal content-->
@@ -168,7 +168,7 @@
 
 <script>
 
-$(function(){
+$(function (){
   fetch();
   // showTotalUser();
   // getApiData();

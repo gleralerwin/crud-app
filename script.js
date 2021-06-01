@@ -57,9 +57,6 @@ function saveUser()
 //editmodal
 function editModal(id)
 {
-
-    $('#editModal').modal();
-
     $.ajax({
         url: 'ajax.php',
         type: 'post',
@@ -71,12 +68,12 @@ function editModal(id)
         success: function(data)
         {
             console.log(data);
-            $('#editModal').attr('data-user-id', data[0]['id']);
-            $('#fname').val(data[0]['fname']); 
-            $('#lname').val(data[0]['lname']);
-            $('#address').val(data[0]['address']);
-            $('#gender').val(data[0]['gender']);
-           
+            $('#editmodal').modal();
+            $('#editmodal').attr('data-user-id', data[0]['id']);
+            $('#edit-fname').val(data[0]['fname']); 
+            $('#edit-lname').val(data[0]['lname']);
+            $('#edit-address').val(data[0]['address']);
+            $('#edit-gender').val(data[0]['gender']);
         }
     });
 }

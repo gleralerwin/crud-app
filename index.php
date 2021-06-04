@@ -1,3 +1,24 @@
+<?php
+      
+      // include 'DB.php';
+      // $sql = "select * from users order by id desc";
+      // $result = mysqli_query($conn, $sql);
+      // $rowCount = mysqli_num_rows($result);
+
+  
+    
+
+    
+      // if($rowCount > 0){
+      //   while($row = mysqli_fetch_row($result)){
+      //     echo $row[1] ."<br>";
+      //   }
+      // }  
+
+
+?>
+     
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +30,13 @@
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
 </head>
 <body>
 	
@@ -17,13 +45,15 @@
 </div>
 
 <div class="container">
-<div id="displayUser" style="margin: 10px;"></div>
+<div id="totalUser" class="pull-right"></div>
   <div class="row">
     <div class="col-sm-12">
 
     <!-- add modal button -->
     <button type="button" class="btn btn-primary btn-md" onclick="addUserModal()"><span class="glyphicon glyphicon-plus"></span> Add User</button>
+   
       <h3 style="padding-top: 20px;">Userlist</h3>
+     
       <table class="table table-bordered">
         <thead>
           <tr>
@@ -54,17 +84,11 @@
       </table>
 
       <div id="display"></div>
-     
     </div>
   </div>
 </div>
 
 <script src="./script.js"></script>
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <!-- DataTable -->
 <!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -121,7 +145,7 @@
 
 
 <!-- Edit Modal -->
-<div id="editmodal" class="modal fade">
+<div id="editmodal" class="modal fade" data-user-id="">
   <div class="modal-dialog">
 
     <!-- Edit Modal content-->
@@ -158,7 +182,7 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="">Save</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="saveUpdate();">Save</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
@@ -170,9 +194,7 @@
 
 $(function (){
   fetch();
-  // showTotalUser();
-  // getApiData();
-  // loadData();
+  showTotalUser();
 });
 
 </script>

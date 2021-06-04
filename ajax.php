@@ -17,7 +17,7 @@ elseif($function == 'saveUser')
 }
 elseif($function == 'getById')
 {
-    $id = isset($_POST['id']);
+    $id = $_POST['id'];
     getById($id);
 }
 elseif($function == 'countRow')
@@ -28,6 +28,17 @@ elseif($function == 'deleteId')
 {   
     $id = $_POST['id'];
     deleteId($id);
+}
+elseif($function == 'insertUpdate')
+{
+    $id = $_POST['id'];
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
+    $address = $_POST['address'];
+    $gender = $_POST['gender'];
+
+
+    insertUpdate($id, $fname,$lname,$address, $gender);
 }
 
 ////////////////////////////////////////////////////////////////
@@ -79,8 +90,8 @@ function getById($id)
     include 'DB.php';
     $sql = "SELECT * FROM users WHERE id='".$id."' ";
     $result = mysqli_query($conn, $sql);
-    
-    while($row = mysqli_fetch_array($result))
+
+    while($row = mysqli_fetch_row($result))
     {
         $arr[] = array(
             'id'=>$row[0],
@@ -100,7 +111,18 @@ function countRow()
     $sql = "SELECT * FROM users";
     $result = mysqli_query($conn, $sql);
     $checkRow = mysqli_num_rows($result);
-    echo $checkRow;
+
+    echo '<button type="button" class="btn btn-warning">
+    Total Users <span class="badge badge-light">'.$checkRow.'</span>
+    </button>';
+}
+
+//save update to database
+function insertUpdate($id, $fname,$lname,$address, $gender)
+{
+    include 'DB.php';
+    $sql = "UPDATE users SET id='".$id."', fname='".$fname."', lname='".$lname."', address='".$address."', gender='".$gender."' WHERE id='".$id."' ";
+    mysqli_query($conn, $sql);
 }
 
 function deleteId($id)

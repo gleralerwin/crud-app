@@ -57,25 +57,58 @@ function saveUser()
 //editmodal
 function editModal(id)
 {
+    $('#editmodal').modal();
+
     $.ajax({
-        url: 'ajax.php',
-        type: 'post',
-        dataType: 'json',
-        data: {
+        url:'ajax.php',
+        type:'post',
+        dataType:'json',
+        data:{
             id:id,
             function:'getById'
         },
         success: function(data)
         {
-            console.log(data);
-            $('#editmodal').modal();
+            // console.log(data);
             $('#editmodal').attr('data-user-id', data[0]['id']);
             $('#edit-fname').val(data[0]['fname']); 
             $('#edit-lname').val(data[0]['lname']);
             $('#edit-address').val(data[0]['address']);
             $('#edit-gender').val(data[0]['gender']);
+          
         }
     });
+}
+
+//save update
+function saveUpdate()
+{
+    var id = $('#editmodal').attr('data-user-id');
+    var fname = $('#edit-fname').val();
+    var lname = $('#edit-lname').val();
+    var address = $('#edit-address').val();
+    var gender = $('#edit-gender').val();
+
+    $.ajax({
+        url: 'ajax.php',
+        type: 'post',
+        dataType: 'text',
+        data:{
+            id:id,
+            fname:fname,
+            lname:lname,
+            address:address,
+            gender:gender,
+            function: 'insertUpdate'
+        },
+        success: function(data) {
+            // console.log(data);
+            alert('Update Succesfully');
+            fetch();
+        }
+    });
+
+
 }
 
 //display number of user
@@ -89,10 +122,9 @@ function showTotalUser()
         success: function(data)
         {
             // console.log(data);
-            $('#displayUser').empty();
-            $('#displayUser').html('<button type="button" class="btn btn-primary">Users <span class="badge">'+data+'</span></button>');
+            $('#totalUser').empty();
+            $('#totalUser').html(data);
         }
-
     });
 }
 

@@ -5,17 +5,11 @@
       // $result = mysqli_query($conn, $sql);
       // $rowCount = mysqli_num_rows($result);
 
-  
-    
-
-    
       // if($rowCount > 0){
       //   while($row = mysqli_fetch_row($result)){
       //     echo $row[1] ."<br>";
       //   }
       // }  
-
-
 ?>
      
 
@@ -41,7 +35,7 @@
 <body>
 	
 <div class="jumbotron text-center">
-  <h2>CREATE, READ, UPDATE AND DELETE</h2>
+  <h2><strong>Tenant Management System</strong></h2>
 </div>
 
 <div class="container">

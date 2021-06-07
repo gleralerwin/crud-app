@@ -152,6 +152,52 @@
 
       <div class="form-group">
         <label>First Name : </label> 
+        <input type="text" id="view-fname" class="form-control"> 
+        </div>
+
+        <div class="form-group">
+        <label>Last Name : </label> 
+        <input type="text" id="view-lname" class="form-control"> 
+        </div>
+
+        <div class="form-group">
+        <label>Address : </label> 
+        <input type="text" id="view-address" class="form-control"> 
+        </div>
+
+        <div class="form-group">
+        <label>Gender</label>
+        <select id="view-gender" class="form-control">
+        <option></option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        </select>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="saveUpdate();">Save</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- View Modal -->
+<div id="viewmodal" class="modal fade" data-user-id="">
+  <div class="modal-dialog">
+
+    <!-- View Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Edit Details</h4>
+      </div>
+      <div class="modal-body">
+
+      <div class="form-group">
+        <label>First Name : </label> 
         <input type="text" id="edit-fname" class="form-control"> 
         </div>
 
@@ -176,13 +222,14 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="saveUpdate();">Save</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
 
   </div>
 </div>
+
+
 
 <script>
 

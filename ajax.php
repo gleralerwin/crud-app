@@ -20,6 +20,11 @@ elseif($function == 'getById')
     $id = $_POST['id'];
     getById($id);
 }
+elseif($function == 'getview')
+{
+    $id = $_POST['id'];
+    getview($id);
+}
 elseif($function == 'countRow')
 {
     countRow();
@@ -63,7 +68,8 @@ function fetchUser()
             <td>'.$row['address'].'</td>
             <td>'.$row['gender'].'</td>
             <td>
-            <button class="btn btn-sm btn-info" onclick="editModal('.$row['id'].')"><span class="glyphicon glyphicon-wrench"></span></button> | 
+            <button class="btn btn-sm btn-info" onclick="viewModal('.$row['id'].')"><span class="glyphicon glyphicon-user"></span></button> |
+            <button class="btn btn-sm btn-primary" onclick="editModal('.$row['id'].')"><span class="glyphicon glyphicon-wrench"></span></button> | 
             <button class="btn btn-sm btn-danger" onclick="deleteUser('.$row['id'].')"><span class="glyphicon glyphicon-trash"></span></button>
             </td>
             </tr>
@@ -86,6 +92,27 @@ function saveUser($fname, $lname, $address, $gender)
 }
 
 function getById($id)
+{
+    include 'DB.php';
+    $sql = "SELECT * FROM users WHERE id='".$id."' ";
+    $result = mysqli_query($conn, $sql);
+
+    while($row = mysqli_fetch_row($result))
+    {
+        $arr[] = array(
+            'id'=>$row[0],
+            'fname'=>$row[1],
+            'lname'=>$row[2],
+            'address'=>$row[3],
+            'gender'=>$row[4]
+        );
+    }
+    echo json_encode($arr);
+    exit();
+}
+
+//show view
+function getview($id)
 {
     include 'DB.php';
     $sql = "SELECT * FROM users WHERE id='".$id."' ";

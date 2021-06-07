@@ -128,6 +128,26 @@ function showTotalUser()
     });
 }
 
+function viewModal(id)
+{
+    $('#viewmodal').modal();
+
+    $.ajax({
+        url: 'ajax.php',
+        type: 'post',
+        dataType: 'text',
+        data:{function: 'getview', id:id},
+        success: function(data)
+        {
+            console.log(data);
+            $('#viewmodal').attr('data-user-id', data[0]['id']);
+            $('#view-fname').val(data[0]['id']);
+        }
+    });
+}
+viewModal();
+
+
 //delete
 function deleteUser(id)
 {

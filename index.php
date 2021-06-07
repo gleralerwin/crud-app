@@ -152,22 +152,22 @@
 
       <div class="form-group">
         <label>First Name : </label> 
-        <input type="text" id="view-fname" class="form-control"> 
+        <input type="text" id="edit-fname" class="form-control"> 
         </div>
 
         <div class="form-group">
         <label>Last Name : </label> 
-        <input type="text" id="view-lname" class="form-control"> 
+        <input type="text" id="edit-lname" class="form-control"> 
         </div>
 
         <div class="form-group">
         <label>Address : </label> 
-        <input type="text" id="view-address" class="form-control"> 
+        <input type="text" id="edit-address" class="form-control"> 
         </div>
 
         <div class="form-group">
         <label>Gender</label>
-        <select id="view-gender" class="form-control">
+        <select id="edit-gender" class="form-control">
         <option></option>
         <option value="male">Male</option>
         <option value="female">Female</option>
@@ -198,22 +198,22 @@
 
       <div class="form-group">
         <label>First Name : </label> 
-        <input type="text" id="edit-fname" class="form-control"> 
+        <input type="text" id="view-fname" class="form-control"> 
         </div>
 
         <div class="form-group">
         <label>Last Name : </label> 
-        <input type="text" id="edit-lname" class="form-control"> 
+        <input type="text" id="view-lname" class="form-control"> 
         </div>
 
         <div class="form-group">
         <label>Address : </label> 
-        <input type="text" id="edit-address" class="form-control"> 
+        <input type="text" id="view-address" class="form-control"> 
         </div>
 
         <div class="form-group">
         <label>Gender</label>
-        <select id="edit-gender" class="form-control">
+        <select id="view-gender" class="form-control">
         <option></option>
         <option value="male">Male</option>
         <option value="female">Female</option>

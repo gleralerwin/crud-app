@@ -128,6 +128,7 @@ function showTotalUser()
     });
 }
 
+//view modal
 function viewModal(id)
 {
     $('#viewmodal').modal();
@@ -135,13 +136,16 @@ function viewModal(id)
     $.ajax({
         url: 'ajax.php',
         type: 'post',
-        dataType: 'text',
+        dataType: 'json',
         data:{function: 'getview', id:id},
         success: function(data)
         {
             console.log(data);
             $('#viewmodal').attr('data-user-id', data[0]['id']);
-            $('#view-fname').val(data[0]['id']);
+            $('#view-fname').val(data[0]['fname']);
+            $('#view-lname').val(data[0]['lname']);
+            $('#view-address').val(data[0]['address']);
+            $('#view-gender').val(data[0]['gender']);
         }
     });
 }

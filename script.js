@@ -45,6 +45,8 @@ function saveUser()
             {
                 // console.log(data);
                 alert("Added Successfully");
+                // document.querySelector("table").style.backgroundColor = "green";
+                $('').css();
                 fetch();
             }
         });
@@ -169,6 +171,14 @@ function deleteUser(id)
         }
     });
 }
+
+function getJsonFile()
+{
+    $.get('./data.json', function(data, status) {
+        console.log(data[0]['fname']);
+    });
+}
+getJsonFile();
 
 ///////////////////////////////////////////////////////////////////////////////////
 

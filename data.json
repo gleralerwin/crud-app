@@ -1,0 +1,20 @@
+[
+    {
+        "fname":"alerwin",
+        "lname":"gler",
+        "address":"quezon city",
+        "gender":"male"
+    },
+    {
+        "fname":"bryan",
+        "lname":"gler",
+        "address":"marikina city",
+        "gender":"male"
+    },
+    {
+        "fname":"jose",
+        "lname":"rizal",
+        "address":"bulacan",
+        "gender":"male"
+    }
+]

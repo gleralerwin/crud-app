@@ -68,7 +68,7 @@ function fetchUser()
             <td>'.$row['address'].'</td>
             <td>'.$row['gender'].'</td>
             <td>
-            <button class="btn btn-sm btn-info" onclick="viewModal('.$row['id'].')"><span class="glyphicon glyphicon-user"></span></button> |
+            <button class="btn btn-sm btn-info" onclick="viewModal('.$row['id'].')"><span class="glyphicon glyphicon-eye-open"></span></button> |
             <button class="btn btn-sm btn-primary" onclick="editModal('.$row['id'].')"><span class="glyphicon glyphicon-wrench"></span></button> | 
             <button class="btn btn-sm btn-danger" onclick="deleteUser('.$row['id'].')"><span class="glyphicon glyphicon-trash"></span></button>
             </td>
@@ -148,7 +148,7 @@ function countRow()
 function insertUpdate($id, $fname,$lname,$address, $gender)
 {
     include 'DB.php';
-    $sql = "UPDATE users SET id='".$id."', fname='".$fname."', lname='".$lname."', address='".$address."', gender='".$gender."' WHERE id='".$id."' ";
+    $sql = "UPDATE users SET fname='".$fname."', lname='".$lname."', address='".$address."', gender='".$gender."' WHERE id='".$id."' ";
     mysqli_query($conn, $sql);
 }
 
@@ -164,4 +164,4 @@ function deleteId($id)
         return false;
     }
 }
-?>
+

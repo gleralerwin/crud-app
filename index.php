@@ -1,8 +1,8 @@
 <?php
       
-      // include 'DB.php';
-      // $sql = "select * from users order by id desc";
-      // $result = mysqli_query($conn, $sql);
+      include 'DB.php';
+      $sql = "select * from users order by id desc";
+      $result = mysqli_query($conn, $sql);
       // $rowCount = mysqli_num_rows($result);
 
       // if($rowCount > 0){
@@ -10,6 +10,16 @@
       //     echo $row[1] ."<br>";
       //   }
       // }  
+
+        $data = file_get_contents('data.json');
+        $convert = json_decode($data);
+        // foreach($convert as $key => $value){
+        //   echo $key ." ". $value->fname ."<br>";
+        //   echo $key ." ". $value->lname ."<br>";
+        //   echo $key ." ". $value->address ."<br>";
+        //   echo $key ." ". $value->gender ."<br>";
+        // }
+
 ?>
      
 
@@ -45,6 +55,7 @@
 
     <!-- add modal button -->
     <button type="button" class="btn btn-primary btn-md" onclick="addUserModal()"><span class="glyphicon glyphicon-plus"></span> Add User</button>
+    <!-- <button class="btn btn-primary btn-sm" onclick="getJsonFile()">GetData</button> -->
    
       <h3 style="padding-top: 20px;">Userlist</h3>
      
@@ -99,7 +110,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">User Details</h4>
+        <h4 class="modal-title"><strong>Add User</strong></h4>
       </div>
       <div class="modal-body">
 
@@ -146,7 +157,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Edit Details</h4>
+        <h4 class="modal-title"><strong>Edit User</strong></h4>
       </div>
       <div class="modal-body">
 
@@ -192,28 +203,28 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Edit Details</h4>
+        <h4 class="modal-title"><strong>View User</strong></h4>
       </div>
       <div class="modal-body">
 
       <div class="form-group">
         <label>First Name : </label> 
-        <input type="text" id="view-fname" class="form-control"> 
+        <input type="text" id="view-fname" class="form-control" readonly> 
         </div>
 
         <div class="form-group">
         <label>Last Name : </label> 
-        <input type="text" id="view-lname" class="form-control"> 
+        <input type="text" id="view-lname" class="form-control" readonly> 
         </div>
 
         <div class="form-group">
         <label>Address : </label> 
-        <input type="text" id="view-address" class="form-control"> 
+        <input type="text" id="view-address" class="form-control" readonly> 
         </div>
 
         <div class="form-group">
         <label>Gender</label>
-        <select id="view-gender" class="form-control">
+        <select id="view-gender" class="form-control" readonly>
         <option></option>
         <option value="male">Male</option>
         <option value="female">Female</option>

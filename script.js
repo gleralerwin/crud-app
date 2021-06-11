@@ -46,7 +46,6 @@ function saveUser()
                 // console.log(data);
                 alert("Added Successfully");
                 // document.querySelector("table").style.backgroundColor = "green";
-                $('').css();
                 fetch();
             }
         });

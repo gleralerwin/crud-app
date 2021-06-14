@@ -240,6 +240,8 @@
   </div>
 </div>
 
+<div id="display"></div>
+
 
 
 <script>

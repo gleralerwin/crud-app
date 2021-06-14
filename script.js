@@ -179,6 +179,15 @@ function getJsonFile()
 }
 getJsonFile();
 
+function Person(fname, lname, address, gender)
+{
+    this.fname = fname;
+    this.lname = lname;
+    this.address = address;
+    this.gender = gender;
+}
+
+
 ///////////////////////////////////////////////////////////////////////////////////
 
 // function getApiData()

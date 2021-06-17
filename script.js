@@ -185,8 +185,29 @@ function Person(fname, lname, address, gender)
     this.lname = lname;
     this.address = address;
     this.gender = gender;
+    alert(this);
 }
 
+const fullname = function(){
+    console.log("hello");
+}
+
+function getPerson()
+{
+    var person1 = Person('al erwin', 'gler', 'manila city', 'male');
+
+    $.ajax({
+        url: 'test.php',
+        type: 'post',
+        dataType: 'text',
+        data: person1,
+        success: function(data)
+        {
+            console.log(data);
+            $('#display').html(data);
+        }
+    });
+}
 
 ///////////////////////////////////////////////////////////////////////////////////
 
